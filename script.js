@@ -24,6 +24,7 @@ var page = new Vue({
         "durability": "",
         "text": "At the end of your turn, add a Dream Card to your hand.",
         "flavor": "Ysera rules the Emerald Dream.  Which is some kind of green-mirror-version of the real world, or something?",
+        "censoredFlavor": "***** rules the Emerald Dream.  Which is some kind of green-mirror-version of the real world, or something?",
         "artist": "Gabor Szikszai",
         "collectible": true,
         "elite": true,
@@ -70,6 +71,12 @@ var page = new Vue({
             } else if (this.hints.length == 2) {
                 this.hints.push("Card Text: " + this.text);
             }
+        },
+        censorFlavorText: function () {
+            //Removes name from flavor text
+            if(this.flavor) {
+                return this.flavor.replace(this.name, "*".repeat(this.name.length));
+            }
         }
     }
 });
@@ -101,6 +108,7 @@ function searchForCard(cardName) {
                 page["durability"] = cardInfo.durability;
                 page["text"] = cardInfo.text;
                 page["flavor"] = cardInfo.flavor;
+                page["censoredFlavor"] = page.censorFlavorText();
                 page["artist"] = cardInfo.artist;
                 page["collectible"] = cardInfo.collectible;
                 page["elite"] = cardInfo.elite;
