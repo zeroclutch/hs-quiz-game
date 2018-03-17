@@ -1,3 +1,4 @@
+/*use strict :P*/
 
 #text {
     width: 200px;
@@ -41,7 +42,17 @@ img {
 }
 
 .notification {
-    width: 300px;
+    width: 500px;
     padding: 5px;
     margin: 10px auto;
+}
+
+.thin {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.controls * {
+    margin: 5px;
 }
