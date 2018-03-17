@@ -1,0 +1,47 @@
+
+#text {
+    width: 200px;
+}
+
+.form {
+    margin: 0 auto;
+}
+
+section {
+    width: 100vw;
+    text-align: center;
+    padding-top: 20px;
+}
+
+h3 {
+    margin-bottom: 10px !important;
+}
+
+.suggested {
+    text-align: center;
+}
+
+.control {
+    text-align: center;
+    padding: 10px;
+}
+
+.tags {
+    margin: 0 auto;
+}
+
+.tag {
+    display: inline;
+}
+
+img {
+    display: inline-block;
+    width: 307px;
+    height: 465px;
+}
+
+.notification {
+    width: 300px;
+    padding: 5px;
+    margin: 10px auto;
+}
