@@ -32,10 +32,36 @@
                 <input id="text" class="input" type="text"><a class="button is-info" v-on:click="guess">Guess</a> <a id="hint" class="button is-warning" v-on:click="getHint">Hint {{ hints.length }}/3 used</a>
                 <div class="select">
                     <select v-model="filter" v-on:change="restartGame">
+                        <option disabled>Rarity</option>
                         <option value="qualities/Legendary">Legendary</option>
                         <option value="qualities/Epic">Epic</option>
                         <option value="qualities/Rare">Rare</option>
                         <option value="qualities/Common">Common</option>
+                        <option value="qualities/Free">Free</option>
+                        <option disabled>Class</option>
+                        <option value="classes/Druid">Druid</option>
+                        <option value="classes/Hunter">Hunter</option>
+                        <option value="classes/Mage">Mage</optiMageon>
+                        <option value="classes/Paladin">Paladin</option>
+                        <option value="classes/Priest">Priest</option>
+                        <option value="classes/Rogue">Rogue</option>
+                        <option value="classes/Shaman">Shaman</option>
+                        <option value="classes/Warlock">Warlock</option>
+                        <option value="classes/Warrior">Warrior</option>
+                        <option disabled>Type</option>
+                        <option value="types/Hero">Hero</option>
+                        <option value="types/Minion">Minion</option>
+                        <option value="types/Spell">Spell</option>
+                        <option value="types/Weapon">Weapon</option>
+                        <option disabled>Race</option>
+                        <option value="races/Beast">Beast</option>
+                        <option value="races/Demon">Demon</option>
+                        <option value="races/Dragon">Dragon</option>
+                        <option value="races/Elemental">Elemental</option>
+                        <option value="races/Mech">Mech</option>
+                        <option value="races/Murloc">Murloc</option>
+                        <option value="races/Pirate">Pirate</option>
+                        <option value="races/Totem">Totem</option>
                     </select>
                 </div>
                 <div v-for="hint in hints">{{ hint }}</div>

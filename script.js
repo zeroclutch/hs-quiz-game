@@ -59,6 +59,7 @@ var page = new Vue({
             console.log(userInput.value.toLowerCase() + " vs " + this.currentCard.name.toLowerCase())
             this.newCard();
             this.hints = [];
+            userInput.value = "";
         },
         newCard: function (event) {
             this.currentCard = page.legendaries[Math.floor(Math.random() * (page.legendaries.length - 1))];
@@ -148,7 +149,7 @@ function getLegendaries() {
         if (this.readyState == 4 && this.status == 200) {
             cards = JSON.parse(this.responseText);
             for (var i = 0; i < cards.length; i++) {
-                if (cards[i].cardSet != "Credits" && cards[i].flavor != "" && cards[i].cardSet != "Tavern Brawl") {
+                if (cards[i].cardSet != "Credits" && cards[i].flavor && cards[i].cardSet != "Tavern Brawl") {
                     legendaryList.push({
                         name: cards[i].name,
                         cardId: cards[i].cardId
