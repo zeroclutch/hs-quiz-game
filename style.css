@@ -56,3 +56,8 @@ img {
 .controls * {
     margin: 5px;
 }
+
+.select {
+    margin-top: 0;
+    padding: 0;
+}

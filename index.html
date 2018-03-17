@@ -30,6 +30,14 @@
             </div>
             <div class="controls">
                 <input id="text" class="input" type="text"><a class="button is-info" v-on:click="guess">Guess</a> <a id="hint" class="button is-warning" v-on:click="getHint">Hint {{ hints.length }}/3 used</a>
+                <div class="select">
+                    <select v-model="filter" v-on:change="restartGame">
+                        <option value="qualities/Legendary">Legendary</option>
+                        <option value="qualities/Epic">Epic</option>
+                        <option value="qualities/Rare">Rare</option>
+                        <option value="qualities/Common">Common</option>
+                    </select>
+                </div>
                 <div v-for="hint in hints">{{ hint }}</div>
             </div>
         </section>

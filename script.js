@@ -24,7 +24,7 @@ var page = new Vue({
         "durability": "",
         "text": "At the end of your turn, add a Dream Card to your hand.",
         "flavor": "Ysera rules the Emerald Dream.  Which is some kind of green-mirror-version of the real world, or something?",
-        "censoredFlavor": "***** rules the Emerald Dream.  Which is some kind of green-mirror-version of the real world, or something?",
+        "censoredFlavor": "Loading...",
         "artist": "Gabor Szikszai",
         "collectible": true,
         "elite": true,
@@ -33,7 +33,8 @@ var page = new Vue({
         "howToGetGold": "",
         "img": "http://wow.zamimg.com/images/hearthstone/cards/enus/original/EX1_572.png",
         "imgGold": "http://wow.zamimg.com/images/hearthstone/cards/enus/animated/EX1_572_premium.gif",
-        "locale": "enUS"
+        "locale": "enUS",
+        filter: "qualities/Legendary"
     },
     methods: {
         guess: function (event) {
@@ -74,9 +75,18 @@ var page = new Vue({
         },
         censorFlavorText: function () {
             //Removes name from flavor text
-            if(this.flavor) {
+            if (this.flavor) {
                 return this.flavor.replace(this.name, "*".repeat(this.name.length));
             }
+        },
+        restartGame: function () {
+            this.guessHistory = [];
+            this.censoredFlavor = "Loading..."
+            this.hints = [];
+            getLegendaries().then(function(){
+                this.newCard();
+            });
+            
         }
     }
 });
@@ -133,7 +143,7 @@ function getLegendaries() {
         cards = [];
 
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://omgvamp-hearthstone-v1.p.mashape.com/cards/qualities/Legendary", true);
+    xhr.open("GET", "https://omgvamp-hearthstone-v1.p.mashape.com/cards/"+page.filter, true);
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             cards = JSON.parse(this.responseText);
