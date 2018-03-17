@@ -43,7 +43,7 @@
             <code>Health: {{ health || "N/A" }}</code>
             <code>Durability: {{ durability || "N/A" }}</code>
             <code>Cost: {{ cost || "N/A" }}</code>
-            <code>Mechanics: <span v-if="!mechanics">N/A</span><span v-for="(mechanic, index) in mechanics">{{ mechanic.name+(index>=mechanics.length-1 ? "" : ", ") }}</span></code>
+            <code>Mechanics: <span v-if="!mechanics || !mechanics[0]">N/A</span><span v-for="(mechanic, index) in mechanics">{{ mechanic.name+(index>=mechanics.length-1 ? "" : ", ") }}</span></code>
             <br><br>
             <h4 class="title is-4">More Info</h4>
             <b>Artist:</b> {{ artist || "None" }}
@@ -56,9 +56,9 @@
             <br>
             <b>Card Text:</b>  {{ text || "None" }}
             <br>
-            <b>How to get:</b>  {{ howToGet || "Craft with Arcane dust or open in Packs" }}
+            <b>How to get:</b>  {{ howToGet || "Craft with arcane dust or open in packs" }}
             <br>
-            <b>How to get golden:</b>  {{ howToGetGold || "Craft with Arcane dust or open in Packs" }}
+            <b>How to get golden:</b>  {{ howToGetGold || "Craft with arcane dust or open in packs" }}
             <br><br>
         </section>
     </div>

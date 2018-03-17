@@ -23,6 +23,8 @@ var page = new Vue({
         "collectible": true,
         "elite": true,
         "race": "Dragon",
+        "howToGet": "",
+        "howToGetGold": "",
         "img": "http://wow.zamimg.com/images/hearthstone/cards/enus/original/EX1_572.png",
         "imgGold": "http://wow.zamimg.com/images/hearthstone/cards/enus/animated/EX1_572_premium.gif",
         "locale": "enUS"
@@ -65,7 +67,7 @@ function searchForCard(cardName) {
             page["cost"] = cardInfo.cost;
             page["attack"] = cardInfo.attack;
             page["health"] = cardInfo.health;
-            page["duability"] = cardInfo.durability;
+            page["durability"] = cardInfo.durability;
             page["text"] = cardInfo.text;
             page["flavor"] = cardInfo.flavor;
             page["artist"] = cardInfo.artist;
