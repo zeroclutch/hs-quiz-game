@@ -46,8 +46,10 @@ var page = new Vue({
             });
 
             var userInput = document.querySelector("#text");
-            if (userInput.value.toLowerCase() == this.currentCard.name.toLowerCase()) {
+            if (userInput.value.toLowerCase() == this.currentCard.name.toLowerCase() && this.hints.length <3 /*awww*/) {
                 this.guessHistory[0].correct = "notification is-success";
+            } else if (userInput.value.toLowerCase() == this.currentCard.name.toLowerCase() && this.hints.length == 3) {    
+                this.guessHistory[0].correct = "notification is-warning";
             } else {
                 this.guessHistory[0].correct = "notification is-danger";
             }
@@ -67,9 +69,9 @@ var page = new Vue({
         },
         getHint: function (event) {
             if (this.hints.length == 0) {
-                this.hints.push("Attack: " + this.attack);
-            } else if (this.hints.length == 1) {
                 this.hints.push("Cost: " + this.cost);
+            } else if (this.hints.length == 1) {
+                this.hints.push("Stats: " + (this.attack || "None") + "/" + (this.health || this.durability || "None"));
             } else if (this.hints.length == 2) {
                 this.hints.push("Card Text: " + this.text);
             }

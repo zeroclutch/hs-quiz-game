@@ -70,7 +70,7 @@
         <section>
             <div v-for="item in guessHistory">
                 <div v-bind:class="item.correct">
-                    You guessed {{ item.userAnswer }}, the answer was {{ item.trueAnswer }}. You used {{ item.hints }} hint(s).
+                    You guessed {{ item.userAnswer || "nothing" }}, the answer was {{ item.trueAnswer }}. You used {{ item.hints }} hint(s).
                 </div>
             </div>
         </section>
