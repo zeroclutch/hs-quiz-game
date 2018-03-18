@@ -31,6 +31,7 @@
             <div class="controls">
                 <input id="text" class="input" type="text"><a class="button is-info" v-on:click="guess">Guess</a> <a id="hint" class="button is-warning" v-on:click="getHint">Hint {{ hints.length }}/3 used</a>
                 <div class="select">
+                    <!--TODO: Make this list dynamically update based using the /info endpoint-->
                     <select v-model="filter" v-on:change="restartGame">
                         <option disabled>Rarity</option>
                         <option value="qualities/Legendary">Legendary</option>

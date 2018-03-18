@@ -1,5 +1,3 @@
-var cardSearch = document.querySelector("#text");
-
 var page = new Vue({
     el: "#output",
     data: {
@@ -98,8 +96,7 @@ function searchForCard(cardName) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://omgvamp-hearthstone-v1.p.mashape.com/cards/" + cardName, true);
 
-    //Public Mashape API key, but you should just get your own, dude.
-    xhr.setRequestHeader("X-Mashape-Key", "CWKtZuPQTgmsh67nhgCICDrm33Hqp1DiamDjsnRJFtoAyyiZBV");
+    xhr.setRequestHeader("X-Mashape-Key", "BDFL3KvQ8KmshZLFz6pgZPXhSsiop1f5zCBjsnGKxiSuBqLPFF");
 
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -131,7 +128,6 @@ function searchForCard(cardName) {
                 page["img"] = cardInfo.img;
                 page["imgGold"] = cardInfo.imgGold;
                 page["locale"] = cardInfo.locale;
-                console.log(page.data);
             });
         } else if (this.status == 404 && this.readyState == 4) {
             alert("Card not found!");
