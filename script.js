@@ -161,6 +161,6 @@ function getLegendaries() {
 			});
 		}
 	}
-	xhr.setRequestHeader("X-Mashape-Key", "cc5lyxTIb3mshFZSOgzdFR2GYcbup1MPjCRjsnYMzF7rWktlK7");
+	xhr.setRequestHeader("X-Mashape-Key", "cBJVQadwctmshKyEg5Y4zMulXDe2p1dTVu4jsnDrioB7ZmIXeJ");
 	xhr.send();
 }
