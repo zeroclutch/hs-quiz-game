@@ -26,6 +26,6 @@ function getCards(filter) {
 			console.log(JSON.stringify(legendaryList))
 		}
 	}
-	xhr.setRequestHeader("X-Mashape-Key", "cBJVQadwctmshKyEg5Y4zMulXDe2p1dTVu4jsnDrioB7ZmIXeJ");
+	xhr.setRequestHeader("X-Mashape-Key", "cBJVQadwctmshKyEg5Y4zMulXDe2p1dTVu4jsnDrioB7ZmIXeJ"); //Not a real key
 	xhr.send();
 }
