@@ -1,3 +1,23 @@
+#output {
+	margin-bottom: 50px;
+}
+
+.hero {
+	background-image: url(dist/assets/priest.png) !important;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+b {
+	margin: 0 !important;
+}
+
+.main-title {
+	font-family: Gochi Hand, "Gochi Hand", sans-serif;
+	font-size: 72px !important;
+}
+
 #text {
     width: 200px;
 }
