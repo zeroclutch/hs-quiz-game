@@ -4,17 +4,31 @@
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
-	<link rel=stylesheet type=text/css href="style.css">
+	<link rel=stylesheet type=text/css href="dist/styles/style.css">
 	<link rel="icon" href="dist/assets/favicon.png">
 	<title>Savory. | The Hearthstone Card Flavor Game</title>
-	
+
 	<meta name="description" content="A guessing where players have to guess the Hearthstone card based on the flavor text.">
 	<meta name="robots" content="index,follow">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3347147-12"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-3347147-12');
+	</script>
+
 </head>
 
 <body>
 	<div id="output">
-		<section class="hero is-medium is-danger" style="background-color: #F67280" >
+		<section class="hero is-medium is-danger" style="background-color: #F67280">
 			<div class="hero-body">
 				<div class="container">
 					<h1 class="title main-title is-1">
@@ -57,28 +71,28 @@
 
 			<div class="box thin">
 				<p class="help"><span class="is-size-6 has-text-weight-bold">KEY:</span>
-				<span class="tag is-danger">INCORRECT</span>
-				<span class="tag is-success">CORRECT</span>
-				<span class="tag is-warning">3 HINTS USED</span>
+					<span class="tag is-danger">INCORRECT</span>
+					<span class="tag is-success">CORRECT</span>
+					<span class="tag is-warning">3 HINTS USED</span>
 				</p>
 			</div>
 		</section>
 	</div>
-	
+
 	<footer class="footer">
-	  <div class="container">
-		<div class="content has-text-centered">
-		  <p>
-			<strong>Savory</strong> by mrprgr</a>. The source code is licensed under
-			<a href="http://opensource.org/licenses/mit-license.php">MIT</a>. See the project on <a href="https://github.com">Github</a>.
-		  </p>
+		<div class="container">
+			<div class="content has-text-centered">
+				<p>
+					<strong>Savory</strong> by mrprgr</a>. The source code is licensed under
+					<a href="http://opensource.org/licenses/mit-license.php">MIT</a>. See the project on <a href="https://github.com">Github</a>.
+				</p>
+			</div>
 		</div>
-	  </div>
 	</footer>
-	
-	<script src="vue.min.js"></script>
+
+	<script src="dist/scripts/vue.min.js"></script>
 	<script src="dist/scripts/retrieveCardData.js"></script>
-	<script src="script.js"></script>
+	<script src="dist/scripts/script.js"></script>
 </body>
 
 </html>
